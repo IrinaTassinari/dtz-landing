@@ -2,9 +2,11 @@
 
 :root {
   --background: #f5efe2;
+  --background-top: #f8f2e7;
   --foreground: #16120f;
   --surface: #fbf6eb;
   --surface-strong: #f0e5d2;
+  --elevated: #fffdf8;
   --line: #d2c1a4;
   --muted: #5e5346;
   --accent: #7a5b1d;
@@ -14,6 +16,39 @@
   --flag-black: #171311;
   --flag-red: #b12024;
   --flag-gold: #b68414;
+  --background-rgb: 245, 239, 226;
+  --surface-rgb: 251, 246, 235;
+  --surface-strong-rgb: 240, 229, 210;
+  --elevated-rgb: 255, 253, 248;
+  --accent-soft-rgb: 239, 226, 191;
+  --highlight-rgb: 216, 191, 128;
+  --page-glow-rgb: 157, 122, 47;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #14110e;
+  --background-top: #181410;
+  --foreground: #f3e9d6;
+  --surface: #1f1914;
+  --surface-strong: #2c241d;
+  --elevated: #271f19;
+  --line: #5c4c3b;
+  --muted: #cdbca4;
+  --accent: #d1a24b;
+  --accent-strong: #f0c36e;
+  --accent-soft: #3a2b1c;
+  --highlight: #c99738;
+  --flag-black: #f3e9d6;
+  --flag-red: #d4584b;
+  --flag-gold: #d7a33f;
+  --background-rgb: 20, 17, 14;
+  --surface-rgb: 31, 25, 20;
+  --surface-strong-rgb: 44, 36, 29;
+  --elevated-rgb: 39, 31, 25;
+  --accent-soft-rgb: 58, 43, 28;
+  --highlight-rgb: 201, 151, 56;
+  --page-glow-rgb: 209, 162, 75;
 }
 
 @theme inline {
@@ -24,8 +59,8 @@
 
 body {
   background:
-    radial-gradient(circle at top, rgba(157, 122, 47, 0.08), transparent 34%),
-    linear-gradient(180deg, #f8f2e7 0%, var(--background) 100%);
+    radial-gradient(circle at top, rgba(var(--page-glow-rgb), 0.08), transparent 34%),
+    linear-gradient(180deg, var(--background-top) 0%, var(--background) 100%);
   color: var(--foreground);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
@@ -37,6 +72,13 @@ h3,
   font-family: var(--font-display), Arial, Helvetica, sans-serif;
 }
 
+main[lang="ru"] h1,
+main[lang="ru"] h2,
+main[lang="ru"] h3,
+main[lang="ru"] [data-display="true"] {
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
 html[lang="ar"] body,
 html[lang="ar"] h1,
 html[lang="ar"] h2,
@@ -46,13 +88,22 @@ html[lang="ar"] [data-display="true"] {
 }
 
 a,
-button {
+a,
+button,
+summary {
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
     color 180ms ease,
     box-shadow 180ms ease,
     transform 180ms ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-soft) !important;
+  border-color: var(--accent-strong) !important;
+  box-shadow: 0 12px 24px rgba(122, 91, 29, 0.18);
+  transform: translateY(-1px);
 }
 
 ::selection {
