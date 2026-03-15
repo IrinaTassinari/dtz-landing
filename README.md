@@ -85,21 +85,7 @@ Examples:
 
 ## Deploy on Vercel
 
-The project is ready for deployment on Vercel without additional configuration.
-
-Basic process:
-
-1. Push the repository to GitHub.
-2. Import the project into Vercel.
-3. Make sure the `Next.js` preset is selected.
-4. Run the deployment.
-
-Before deployment, it is recommended to check locally:
-
-```bash
-npm run lint
-npm run build
-```
+The project is deployed on Vercel: https://dtz-landing.vercel.app/de
 
 ## Additional Notes
 
@@ -198,23 +184,8 @@ npm run start
 
 ## Деплой на Vercel
 
-Проект готов к деплою на Vercel без дополнительной конфигурации.
-
-Базовый процесс:
-
-1. Загрузить репозиторий в GitHub.
-2. Импортировать проект в Vercel.
-3. Убедиться, что выбран preset `Next.js`.
-4. Запустить deploy.
-
-Локально перед деплоем желательно проверить:
-
-```bash
-npm run lint
-npm run build
-```
+Сайт задеплоен на Vercel: https://dtz-landing.vercel.app/de
 
 ## Дополнительно
 
 Подробные ответы по архитектуре, добавлению языков, добавлению секций и оценке стоимости собраны в [docs.md](docs.md).
-
