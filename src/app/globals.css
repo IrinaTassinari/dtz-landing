@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5efe2;
+  --foreground: #16120f;
+  --surface: #fbf6eb;
+  --surface-strong: #f0e5d2;
+  --line: #d2c1a4;
+  --muted: #5e5346;
+  --accent: #7a5b1d;
+  --accent-strong: #5e4310;
+  --accent-soft: #efe2bf;
+  --highlight: #d8bf80;
+  --flag-black: #171311;
+  --flag-red: #b12024;
+  --flag-gold: #b68414;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-body);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top, rgba(157, 122, 47, 0.08), transparent 34%),
+    linear-gradient(180deg, #f8f2e7 0%, var(--background) 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+[data-display="true"] {
+  font-family: var(--font-display), Arial, Helvetica, sans-serif;
+}
+
+html[lang="ar"] body,
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] [data-display="true"] {
+  font-family: var(--font-arabic), Arial, Helvetica, sans-serif;
+}
+
+a,
+button {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+::selection {
+  background: var(--highlight);
+  color: var(--foreground);
 }
