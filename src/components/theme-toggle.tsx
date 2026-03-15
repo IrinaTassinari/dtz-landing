@@ -32,7 +32,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="theme-toggle ml-3 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-2xl border"
+      className="theme-toggle inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border"
       style={{
         backgroundColor: "var(--elevated)",
         borderColor: "var(--accent)",

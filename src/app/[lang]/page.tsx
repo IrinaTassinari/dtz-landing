@@ -43,6 +43,11 @@ export default async function Page({ params }: PageProps) {
     >
       <div className="flex items-center justify-end gap-6">
         <LanguageSwitcher currentLang={lang} />
+        <span
+          className="h-8 w-px"
+          style={{ backgroundColor: "var(--line)" }}
+          aria-hidden="true"
+        />
         <ThemeToggle />
       </div>
 
