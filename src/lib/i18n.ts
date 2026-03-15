@@ -12,11 +12,11 @@ export const translations = {
 
 export type Lang = keyof typeof translations;
 
-export const supportedLanguages: { code: Lang; label: string }[] = [
-  { code: "de", label: "DE" },
-  { code: "ru", label: "RU" },
-  { code: "en", label: "EN" },
-  { code: "ar", label: "AR" },
+export const supportedLanguages: { code: Lang; label: string; name: string }[] = [
+  { code: "de", label: "DE", name: "Deutsch" },
+  { code: "ru", label: "RU", name: "Русский" },
+  { code: "en", label: "EN", name: "English" },
+  { code: "ar", label: "AR", name: "العربية" },
 ];
 
 export function isSupportedLang(lang: string): lang is Lang {

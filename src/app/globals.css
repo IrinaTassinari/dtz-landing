@@ -39,7 +39,7 @@ html[data-theme="dark"] {
   --accent-strong: #f0c36e;
   --accent-soft: #3a2b1c;
   --highlight: #c99738;
-  --flag-black: #f3e9d6;
+  --flag-black: #171311;
   --flag-red: #d4584b;
   --flag-gold: #d7a33f;
   --background-rgb: 20, 17, 14;
@@ -104,6 +104,24 @@ summary {
   border-color: var(--accent-strong) !important;
   box-shadow: 0 12px 24px rgba(122, 91, 29, 0.18);
   transform: translateY(-1px);
+}
+
+html[data-theme="dark"] [style*="var(--flag-black)"] {
+  filter:
+    drop-shadow(0 0 2px rgba(255, 248, 235, 0.8))
+    drop-shadow(0 0 6px rgba(255, 248, 235, 0.24));
+}
+
+html[data-theme="dark"] [style*="var(--flag-red)"] {
+  filter:
+    drop-shadow(0 0 2px rgba(255, 210, 210, 0.72))
+    drop-shadow(0 0 6px rgba(212, 88, 75, 0.22));
+}
+
+html[data-theme="dark"] [style*="var(--flag-gold)"] {
+  filter:
+    drop-shadow(0 0 2px rgba(255, 236, 196, 0.7))
+    drop-shadow(0 0 6px rgba(215, 163, 63, 0.22));
 }
 
 ::selection {

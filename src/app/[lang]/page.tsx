@@ -37,19 +37,20 @@ export default async function Page({ params }: PageProps) {
     "linear-gradient(180deg, rgba(var(--surface-rgb),1) 0%, rgba(var(--elevated-rgb),1) 100%)";
 
   return (
+    <>
+    
+  <header className="mx-auto flex max-w-6xl items-center justify-end px-6 pt-6 pb-2">
+    <div className="flex items-center gap-6">
+      <LanguageSwitcher currentLang={lang} />
+      <span className="h-8 w-px" aria-hidden="true" />
+      <ThemeToggle />
+    </div>
+  </header>
+
     <main
       lang={lang}
-      className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-10 sm:py-16"
+      className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pt-2 pb-10 sm:pt-4 sm:pb-16"
     >
-      <div className="flex items-center justify-end gap-6">
-        <LanguageSwitcher currentLang={lang} />
-        <span
-          className="h-8 w-px"
-          style={{ backgroundColor: "var(--line)" }}
-          aria-hidden="true"
-        />
-        <ThemeToggle />
-      </div>
 
 
 {/* 01 section - Уверенно сдай экзамен по немецкому */}
@@ -902,13 +903,14 @@ export default async function Page({ params }: PageProps) {
           >
             <div className="flex flex-wrap items-start justify-between gap-5">
               <div className="max-w-2xl">
-                <p
-                  className="text-sm font-semibold uppercase tracking-[0.18em]"
+                <h3
+                  data-display="true"
+                  className="text-xl font-normal leading-tight sm:text-2xl"
                   style={{ color: "var(--accent-strong)" }}
                   dir={isArabic ? "rtl" : "ltr"}
                 >
                   {t.examLevelsTitle}
-                </p>
+                </h3>
                 <p
                   data-display="true"
                   className="mt-3 text-3xl font-normal leading-tight sm:text-[2.6rem]"
@@ -1566,6 +1568,12 @@ export default async function Page({ params }: PageProps) {
                   >
                     <div className="h-3 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
                   </div>
+                  <div
+                    className="rounded-2xl border px-4 py-3"
+                    style={{ borderColor: "var(--line)", backgroundColor: "var(--surface)" }}
+                  >
+                    <div className="h-3 w-4/5 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
+                  </div>
                 </div>
               </div>
               <div className="mt-6 flex flex-col">
@@ -1719,10 +1727,19 @@ export default async function Page({ params }: PageProps) {
                     className="min-h-[10rem] rounded-2xl border px-4 py-4"
                     style={{ borderColor: "var(--line)", backgroundColor: "var(--elevated)" }}
                   >
+                    <p
+                      className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em]"
+                      style={{ color: "var(--accent-strong)" }}
+                    >
+                      Reply
+                    </p>
                     <div className="h-3 w-4/5 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
                     <div className="mt-3 h-3 w-full rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
                     <div className="mt-3 h-3 w-5/6 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
                     <div className="mt-3 h-3 w-3/4 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
+                    <div className="mt-3 h-3 w-11/12 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
+                    <div className="mt-3 h-3 w-2/3 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
+                    <div className="mt-3 h-3 w-4/5 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
                   </div>
                 </div>
               </div>
@@ -1783,6 +1800,7 @@ export default async function Page({ params }: PageProps) {
                     <div className="mt-3 h-3 w-5/6 rounded-full" style={{ backgroundColor: "rgba(122,91,29,0.18)" }} />
                     <div className="mt-3 h-3 w-full rounded-full" style={{ backgroundColor: "rgba(122,91,29,0.18)" }} />
                     <div className="mt-3 h-3 w-4/5 rounded-full" style={{ backgroundColor: "rgba(122,91,29,0.18)" }} />
+                    <div className="mt-3 h-3 w-11/12 rounded-full" style={{ backgroundColor: "rgba(122,91,29,0.18)" }} />
                   </div>
                   <div
                     className="rounded-2xl border px-4 py-3"
@@ -1795,6 +1813,18 @@ export default async function Page({ params }: PageProps) {
                       {t.previewCardFourWhyLabel}
                     </p>
                     <div className="mt-3 h-3 w-3/4 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
+                  </div>
+                  <div
+                    className="rounded-2xl border px-4 py-3"
+                    style={{ borderColor: "var(--line)", backgroundColor: "var(--surface)" }}
+                  >
+                    <p
+                      className="text-xs font-semibold uppercase tracking-[0.16em]"
+                      style={{ color: "var(--accent-strong)" }}
+                    >
+                      Example
+                    </p>
+                    <div className="mt-3 h-3 w-4/5 rounded-full" style={{ backgroundColor: "var(--surface-strong)" }} />
                   </div>
                 </div>
               </div>
@@ -2152,5 +2182,19 @@ export default async function Page({ params }: PageProps) {
         </div>
       </section>
     </main>
+
+      <footer className="mx-auto mb-8 flex w-full max-w-6xl items-center justify-between px-6 text-sm">
+        <p className="text-lg font-semibold" style={{ color: "var(--foreground)" }}>
+          Confidently
+        </p>
+        <a
+          href="mailto:teachers@dtz-exam.de"
+          className="text-lg font-semibold underline underline-offset-4"
+          style={{ color: "var(--foreground)" }}
+        >
+          teachers@dtz-exam.de
+        </a>
+      </footer>
+    </>
   );
 }
